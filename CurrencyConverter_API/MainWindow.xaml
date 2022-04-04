@@ -1,0 +1,74 @@
+﻿<Window x:Class="CurrencyConverter_API.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:CurrencyConverter_API"
+        mc:Ignorable="d"
+        Title="Curreny Converter" SizeToContent="WidthAndHeight" MinHeight="400" MinWidth="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="2" Width="800" CornerRadius="10" BorderThickness="5" Margin="100 0">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF935A72" Offset="0.0"/>
+                    <GradientStop Color="#FF7A2B30" Offset="0.50"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Rectangle Grid.Row="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF42B1C3" Offset="0.0"/>
+                        <GradientStop Color="#FF42B1C3" Offset="0.50"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Width="1000" VerticalAlignment="Center">
+            <Label Height="50" Width="1000" HorizontalContentAlignment="Center" VerticalAlignment="Center" Content="Currency Converter" FontSize="25" Foreground="#ec2075" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Height="80" Width="1000">
+            <Label Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalAlignment="Center" Content="Converted Currency" Foreground="#FF42B1C3" FontSize="20"/>
+            <Label Name="lblCurrency" Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalAlignment="Center" Foreground="#B0955E" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Width="800">
+            <Label Height="40" Width="150" Content="Enter Amount :" Margin="35 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+            <Label Height="40" Width="150" Content="From :" Margin="110 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+            <Label Height="40" Width="150" Content="To :" Margin="130 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="90" Width="800">
+            <TextBox Name="txtCurrency" Width="200" Height="30" Margin="40 0 0 0" PreviewTextInput="NumberValidationTextBox" FontSize="18" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <ComboBox Name="cmbFromCurrency" Width="170" Height="30" Margin="60 0 40 0" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150"/>
+            <fa:ImageAwesome Icon="Exchange" Width="30" Height="30" Foreground="White" VerticalAlignment="Top"/>
+            <ComboBox Name="cmbToCurrency" Width="170" Height="30" Margin="40 0 0 0" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Height="80" Width="1000" Orientation="Horizontal">
+            <Button Name="Convert" Height="40" Width="150" Content="Convert" Click="Convert_Click" Margin="350 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF42B1C3" Offset="0.0"/>
+                        <GradientStop Color="#FF42B1C3" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Name="Clear" Height="40" Width="150" Content="Clear" Click="Clear_Click" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#ec2075" Offset="0.0"/>
+                        <GradientStop Color="#f33944" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Height="120" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Height="120" Width="150" Source="Images\money.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="325 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
